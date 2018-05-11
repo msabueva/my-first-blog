@@ -6,15 +6,19 @@
         <div>
             <h1><a href="/">Django Girls Blog</a></h1>
         </div>
-
-       {% for post in posts %}
-        <div>
-            <p>{{ post.published_date }}</p>
-            <h3>{{ post.title }}</h3>
-            <p>{{ post.text|linebreaksbr }}</p>
-            <hr>
-        </div>
-            {{ post }}
-       {% endfor%}
+        {% if posts %}
+           {% for post in posts %}
+            <div>
+                <p>{{ post.published_date }}</p>
+                <h3>{{ post.title }}</h3>
+                <p>{{ post.text|linebreaksbr }}</p>
+                <hr>
+            </div>
+                {{ post }}
+           {% endfor%}
+        {% else:
+            print("There is no post found and available")
+        %}
+        {% endif %}}
     </body>
 </html>
