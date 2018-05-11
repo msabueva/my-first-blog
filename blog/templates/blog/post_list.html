@@ -6,7 +6,7 @@
         <div>
             <h1><a href="/">Django Girls Blog</a></h1>
         </div>
-        {% if posts %}
+        {% if post %}
            {% for post in posts %}
             <div>
                 <p>{{ post.published_date }}</p>
@@ -16,7 +16,7 @@
             </div>
                 {{ post }}
            {% endfor%}
-        {% else }
+        {% else %}
             <div>No data found.</div>
         {% endif %}
     </body>
